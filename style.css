@@ -71,19 +71,21 @@ body {
 .product-container {
     display: flex;
     justify-content: center;
-    gap: 30px;  /* زيادة المسافة بين المنتجات */
-    flex-wrap: wrap;
-    padding: 20px; /* إضافة مسافة حول المنتجات */
+    gap: 30px;
+    flex-wrap: nowrap; /* عدم لف المنتجات */
+    overflow-x: auto; /* تمكين التمرير الأفقي */
+    padding: 20px;
+    scroll-snap-type: x mandatory; /* يجعل التمرير أكثر سلاسة */
 }
 
 .product {
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 280px;  /* توسيع المنتج قليلاً */
+    flex: 0 0 auto; /* يجعل المنتجات تحافظ على حجمها */
+    width: 280px; 
     text-align: center;
-    background-color: white; /* خلفية نظيفة */
-    border-radius: 10px; /* زوايا مستديرة */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    scroll-snap-align: start; /* يجعل كل منتج يتوقف عند بداية العرض */
 }
 
 
