@@ -1,5 +1,6 @@
 /* إعدادات عامة */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 body {
     font-family: 'Poppins', sans-serif; 
     background-color: #f8f5f2; 
@@ -18,18 +19,16 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #B08D74; /* لون كابتشينو أغمق */
+    background-color: #B08D74;
     color: white;
-    padding: 10px 20px; /* تقليل التباعد */
+    padding: 10px 20px;
     height: 60px;
-    position: relative; /* تثبيت الـ Navbar عند التمرير */
     width: 100%;
-    transition: background-color 0.5s ease-in-out;
-    z-index: 1000;  /* تقليل الارتفاع */
-   
-    
+    position: static;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
-
 
 .navbar ul {
     list-style: none;
@@ -41,7 +40,6 @@ body {
 
 .navbar ul li {
     display: inline;
-    
 }
 
 .navbar ul li a {
@@ -53,75 +51,75 @@ body {
 /* قسم الـ Hero */
 .hero {
     background: url('path-to-hero-image.jpg') center/cover no-repeat;    
-    height: 200px; /* تقليل الارتفاع */
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: rgb(39, 27, 27);
     font-size: 24px;
-    padding: 8px 0; /* تقليل التباعد العلوي والسفلي */
+    padding: 8px 0;
+    width: 100%;
 }
-
 
 /* المنتجات */
 .products {
     padding: 20px;
+    width: 100%;
 }
 
 .product-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: nowrap; /* عدم لف المنتجات */
-    overflow-x: auto; /* تمكين التمرير الأفقي */
+    gap: 20px;
+    flex-wrap: wrap; /* جعل المنتجات تلف عند الحاجة */
+    overflow-x: auto;
     padding: 20px;
-    scroll-snap-type: x mandatory; /* يجعل التمرير أكثر سلاسة */
+    scroll-snap-type: x mandatory;
 }
 
 .product {
-    flex: 0 0 auto; /* يجعل المنتجات تحافظ على حجمها */
-    width: 280px; 
+    flex: 1 1 calc(33.33% - 20px); /* يجعل المنتجات تتكيف مع الحجم */
+    max-width: 300px;
     text-align: center;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start; /* يجعل كل منتج يتوقف عند بداية العرض */
+    scroll-snap-align: start;
 }
 
-
 .product img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
 }
 
 /* الفوتر */
 footer {
-    background: #B08D74; /* لون أغمق قليلًا لمطابقة الـ Navbar */
+    background: #B08D74;
     color: white;
     padding: 15px 0;
     text-align: center;
     font-size: 14px;
-    position: relative;
-    bottom: 0;
     width: 100%;
 }
 
 .product p {
     font-size: 13px;
-    color: #555; /* جعل النص أكثر هدوءًا */
-    height: 80px; /* تحديد ارتفاع موحد للوصف */
+    color: #555;
+    height: 80px;
     text-overflow: ellipsis;
     max-height: 80px;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
+}
 
-}
 h2, h3 {
-    color: #5a3e2b; /* لون بني أنيق */
+    color: #5a3e2b;
 }
+
 .navbar ul li a:hover {
-    color: #ffdd99; /* لون مميز عند التمرير */
+    color: #ffdd99;
 }
+
 .product button {
     background-color: #8d6b4f;
     color: white;
@@ -132,14 +130,17 @@ h2, h3 {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
 .product button:hover {
     background-color: #6f4c3e;
 }
+
 .container {
-    max-width: 1200px; /* جعل المحتوى داخل إطار متوسط الحجم */
+    max-width: 1200px;
     width: 100%;
     padding: 0 20px;
 }
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -148,7 +149,7 @@ h2, h3 {
 }
 
 .social-icons img {
-    width: 24px;
+    max-width: 100%;
     height: 24px;
     transition: transform 0.3s;
 }
@@ -156,6 +157,7 @@ h2, h3 {
 .social-icons img:hover {
     transform: scale(1.2);
 }
+
 #scrollToTop {
     position: fixed;
     bottom: 20px;
@@ -166,7 +168,7 @@ h2, h3 {
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
-    display: none; /* إخفاؤه افتراضيًا */
+    display: none;
     width: 50px;
     height: 50px;
     font-size: 18px;
@@ -175,8 +177,38 @@ h2, h3 {
 #scrollToTop:hover {
     background-color: #6f4c3e;
 }
+
 .navbar h1 {
-    margin-left: 20px; /* يحرك كلمة Paris لليمين */
-    /* أو */
+    margin-left: 20px;
     padding-left: 20px;
+}
+
+/* جعل التصميم أكثر استجابة للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .hero {
+        font-size: 18px;
+        height: 150px;
+    }
+
+    .product-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        flex: 1 1 100%;
+        max-width: 90%;
+    }
 }
