@@ -1,20 +1,17 @@
-/* General settings */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f8f5f2;
+    background: linear-gradient(to bottom, #f5ebe0, #d7ccc8);
     color: #333;
     margin: 0;
     padding: 0;
     text-align: center;
-    background: linear-gradient(to bottom, #f5ebe0, #d7ccc8);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -38,19 +35,13 @@ body {
     padding: 0;
 }
 
-.navbar ul li {
-    display: inline;
-}
-
 .navbar ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-/* Hero Section */
 .hero {
-    background: url('path-to-hero-image.jpg') center/cover no-repeat;
     height: 200px;
     display: flex;
     align-items: center;
@@ -61,7 +52,6 @@ body {
     width: 100%;
 }
 
-/* Products Section */
 .products {
     padding: 20px;
     width: 100%;
@@ -78,7 +68,7 @@ body {
 }
 
 .product {
-    flex: 1 1 calc(33.33% - 40px); /* Default for desktop */
+    flex: 1 1 calc(33.33% - 40px);
     max-width: 300px;
     text-align: center;
     background-color: white;
@@ -94,7 +84,6 @@ body {
     border-radius: 10px 10px 0 0;
 }
 
-/* Footer */
 footer {
     background: #B08D74;
     color: white;
@@ -139,13 +128,6 @@ h2, h3 {
     background-color: #6f4c3e;
 }
 
-.container {
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
 .social-icons {
     display: flex;
     justify-content: center;
@@ -154,7 +136,6 @@ h2, h3 {
 }
 
 .social-icons img {
-    max-width: 100%;
     height: 24px;
     transition: transform 0.3s;
 }
@@ -188,7 +169,7 @@ h2, h3 {
     padding-left: 20px;
 }
 
-/* Responsive Design */
+/* Tablets and smaller screens */
 @media (max-width: 768px) {
     .navbar {
         padding: 10px;
@@ -196,7 +177,6 @@ h2, h3 {
     }
 
     .navbar ul {
-        flex-direction: row; /* Keep navbar items horizontal */
         gap: 10px;
     }
 
@@ -204,28 +184,14 @@ h2, h3 {
         font-size: 14px;
     }
 
-    /* Option 2: Two products side by side, third below the first */
     .product-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start; /* Align to the left */
-        gap: 10px;
+        justify-content: space-between;
     }
 
     .product {
-        flex: 1 1 calc(50% - 10px); /* Two items per row */
+        flex: 0 0 calc(50% - 10px); /* Two items per row */
         max-width: 150px;
         margin: 5px;
-    }
-
-    .product:nth-child(3) {
-        margin-left: 0; /* Align third product below the first */
-        flex: 1 1 calc(50% - 10px);
-        max-width: 150px;
-    }
-
-    .product img {
-        max-width: 100%;
     }
 
     .product p {
@@ -240,8 +206,8 @@ h2, h3 {
     }
 }
 
-/* Extra small screens */
-@media (max-width: 480px) {
+/* Very small screens */
+@media (max-width: 360px) {
     .navbar ul {
         gap: 8px;
     }
@@ -251,11 +217,7 @@ h2, h3 {
     }
 
     .product {
-        flex: 1 1 calc(50% - 10px); /* Maintain 2 per row */
-        max-width: 130px; /* Slightly smaller for very small screens */
-    }
-
-    .product:nth-child(3) {
+        flex: 0 0 calc(50% - 10px); /* Still two per row */
         max-width: 130px;
     }
 }
