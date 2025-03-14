@@ -78,7 +78,7 @@ body {
 }
 
 .product {
-    flex: 1 1 calc(33.33% - 40px); /* Default: 3 items per row */
+    flex: 1 1 calc(33.33% - 40px); /* Default for desktop */
     max-width: 300px;
     text-align: center;
     background-color: white;
@@ -195,25 +195,33 @@ h2, h3 {
         height: auto;
     }
 
-    /* Keep navbar items horizontal */
     .navbar ul {
-        flex-direction: row; /* Ensure items stay side by side */
-        gap: 10px; /* Reduce gap for mobile */
+        flex-direction: row; /* Keep navbar items horizontal */
+        gap: 10px;
     }
 
     .navbar ul li a {
-        font-size: 14px; /* Slightly smaller text for mobile */
+        font-size: 14px;
     }
 
-    /* Option 1: Three products side by side */
+    /* Option 2: Two products side by side, third below the first */
     .product-container {
-        gap: 10px; /* Reduce gap for smaller screens */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start; /* Align to the left */
+        gap: 10px;
     }
 
     .product {
-        flex: 1 1 calc(33.33% - 20px); /* 3 items per row */
-        max-width: 120px; /* Smaller size for mobile */
+        flex: 1 1 calc(50% - 10px); /* Two items per row */
+        max-width: 150px;
         margin: 5px;
+    }
+
+    .product:nth-child(3) {
+        margin-left: 0; /* Align third product below the first */
+        flex: 1 1 calc(50% - 10px);
+        max-width: 150px;
     }
 
     .product img {
@@ -232,44 +240,22 @@ h2, h3 {
     }
 }
 
-/* Option 2: Two products side by side, third below the first (not centered) */
-@media (max-width: 768px) and (prefers-reduced-motion: no-preference) {
-    /* Uncomment this block and comment out the above .product-container and .product rules in the 768px media query if you prefer this layout */
-    /*
-    .product-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start; 
-        gap: 10px;
-    }
-
-    .product {
-        flex: 1 1 calc(50% - 10px); 
-        max-width: 150px;
-        margin: 5px;
-    }
-
-    .product:nth-child(3) {
-        margin-left: 0; 
-        flex: 1 1 calc(50% - 10px);
-        max-width: 150px;
-    }
-    */
-}
-
 /* Extra small screens */
 @media (max-width: 480px) {
     .navbar ul {
-        gap: 8px; /* Even smaller gap */
+        gap: 8px;
     }
 
     .navbar ul li a {
-        font-size: 12px; /* Smaller text */
+        font-size: 12px;
     }
 
-    /* For Option 1: Adjust to 2 per row on very small screens */
     .product {
-        flex: 1 1 calc(50% - 20px); /* 2 items per row */
-        max-width: 150px;
+        flex: 1 1 calc(50% - 10px); /* Maintain 2 per row */
+        max-width: 130px; /* Slightly smaller for very small screens */
+    }
+
+    .product:nth-child(3) {
+        max-width: 130px;
     }
 }
