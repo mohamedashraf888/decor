@@ -62,7 +62,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px; /* Reduced gap for narrower screens */
     padding: 20px;
     box-sizing: border-box;
     max-width: 1200px;
@@ -70,8 +70,8 @@ body {
 }
 
 .product {
-    flex: 0 0 calc(50% - 10px); /* Two columns, accounting for gap */
-    max-width: calc(50% - 10px);
+    flex: 0 0 calc(50% - 5px); /* Tighter width and gap */
+    max-width: calc(50% - 5px);
     text-align: center;
     background-color: white;
     border-radius: 10px;
@@ -171,7 +171,7 @@ h2, h3 {
     padding-left: 20px;
 }
 
-/* Adjustments for smaller screens */
+/* Tablets and smaller screens */
 @media (max-width: 768px) {
     .navbar {
         padding: 10px;
@@ -184,10 +184,6 @@ h2, h3 {
 
     .navbar ul li a {
         font-size: 14px;
-    }
-
-    .product {
-        max-width: calc(50% - 10px);
     }
 
     .product p {
@@ -212,8 +208,12 @@ h2, h3 {
         font-size: 12px;
     }
 
+    .product-container {
+        gap: 8px; /* Even smaller gap */
+    }
+
     .product {
-        max-width: calc(50% - 5px); /* Slightly smaller gap for tiny screens */
-        flex: 0 0 calc(50% - 5px);
+        flex: 0 0 calc(50% - 4px); /* Tighter still */
+        max-width: calc(50% - 4px);
     }
 }
