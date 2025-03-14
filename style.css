@@ -1,4 +1,4 @@
-/* إعدادات عامة */
+/* General settings */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
@@ -14,7 +14,7 @@ body {
     align-items: center;
 }
 
-/* شريط التنقل */
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -48,7 +48,7 @@ body {
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* قسم الـ Hero */
+/* Hero Section */
 .hero {
     background: url('path-to-hero-image.jpg') center/cover no-repeat;    
     height: 200px;
@@ -61,7 +61,7 @@ body {
     width: 100%;
 }
 
-/* المنتجات */
+/* Products Section */
 .products {
     padding: 20px;
     width: 100%;
@@ -71,20 +71,17 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* جعل المنتجات تلف عند الحاجة */
-    overflow-x: auto;
+    flex-wrap: wrap; /* Allow products to wrap to the next line */
     padding: 20px;
-    scroll-snap-type: x mandatory;
 }
 
 .product {
-    flex: 1 1 calc(33.33% - 20px); /* يجعل المنتجات تتكيف مع الحجم */
+    flex: 1 1 calc(33.33% - 20px); /* Adjust the width of each product */
     max-width: 300px;
     text-align: center;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    scroll-snap-align: start;
 }
 
 .product img {
@@ -92,7 +89,7 @@ body {
     height: auto;
 }
 
-/* الفوتر */
+/* Footer */
 footer {
     background: #B08D74;
     color: white;
@@ -183,7 +180,7 @@ h2, h3 {
     padding-left: 20px;
 }
 
-/* جعل التصميم أكثر استجابة للشاشات الصغيرة */
+/* Make the design more responsive for small screens */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
